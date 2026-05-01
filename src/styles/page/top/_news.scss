@@ -1,0 +1,65 @@
+@use '../../global' as g;
+
+/*!
+page > top > news
+------------------------------
+*/
+
+.top-news {
+    padding-top: 40px;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        width: calc(265 / 375 * 100%);
+        height: 100%;
+        background-color: var(--color-bg-extra-light);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: var(--z-index-background);
+        border-radius: 50px 0 0 0;
+    }
+
+    @include g.mq(ml) {
+        padding-top: 0;
+        &::after {
+            width: calc(1080 / 1366 * 100%);
+        }
+    }
+}
+.top-news-inner {
+    display: grid;
+    grid-template-areas: 'title' 'list' 'button';
+
+    @include g.mq(ml) {
+        display: grid;
+        grid-template-areas:
+            'title list'
+            'button list';
+    }
+}
+.top-news-content {
+    margin-top: 48px;
+    grid-area: list;
+}
+
+.top-news-title {
+    grid-area: title;
+    @include g.mq(ml) {
+        height: fit-content;
+        margin-top: 96px;
+    }
+}
+
+.top-news-button {
+    grid-area: button;
+    margin-top: 32px;
+    margin-left: auto;
+    @include g.mq(ml) {
+        margin: 0;
+        width: fit-content;
+        align-self: flex-start;
+    }
+}

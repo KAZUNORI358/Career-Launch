@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+    {{> head}}
+    <body>
+        {{> header }}
+
+        <main class="contact u-pbt">
+            {{> sub-kv subTitle-en="Contact" subTitle-ja="お問い合わせ" }}
+            <div class="l-container-s">
+                <!-- contact-form -->
+                <form class="contact-form" action="" method="post">
+                    <!-- お名前 -->
+                    <div class="contact-form-item">
+                        <label for="name" class="contact-form-item-title">
+                            <span class="contact-form-item-title-text">お名前</span>
+                            <span class="contact-form-item-title-required">必須</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="contact-form-item-input"
+                            required
+                            aria-label="お名前"
+                            placeholder="山田 太郎"
+                        />
+                    </div>
+
+                    <!-- メールアドレス -->
+                    <div class="contact-form-item">
+                        <label for="email" class="contact-form-item-title">
+                            <span class="contact-form-item-title-text">メールアドレス</span>
+                            <span class="contact-form-item-title-required">必須</span>
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="contact-form-item-input"
+                            required
+                            aria-label="メールアドレス"
+                            placeholder="taro@example.com"
+                        />
+                    </div>
+                    <!-- 電話番号 -->
+                    <div class="contact-form-item">
+                        <label for="tel" class="contact-form-item-title">
+                            <span class="contact-form-item-title-text">電話番号</span>
+                            <span class="contact-form-item-title-required">必須</span>
+                        </label>
+                        <input
+                            type="tel"
+                            name="tel"
+                            id="tel"
+                            class="contact-form-item-input"
+                            required
+                            aria-label="電話番号"
+                            placeholder="0120-123-456"
+                        />
+                    </div>
+                    <!-- お問い合わせ内容 -->
+                    <div class="contact-form-item">
+                        <label for="inquiry" class="contact-form-item-title">
+                            <span class="contact-form-item-title-text">お問い合わせ内容</span>
+                            <span class="contact-form-item-title-required">必須</span>
+                        </label>
+                        <textarea
+                            name="inquiry"
+                            id="inquiry"
+                            class="contact-form-item-input contact-form-item-input--textarea"
+                            required
+                            aria-label="お問い合わせ内容"
+                            placeholder="ご自由にご記入してください。"
+                        ></textarea>
+                    </div>
+                </form>
+                <!-- プライパシーポリシー -->
+                <p class="contact-form-privacy-text">
+                    <a href="privacy.html">プライパシーポリシー</a>に同意して、
+                </p>
+                <button type="submit" class="contact-form-button">送信する</button>
+            </div>
+        </main>
+
+        {{> footer}}
+    </body>
+</html>

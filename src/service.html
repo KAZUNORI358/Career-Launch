@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+    {{> head}}
+    <body>
+        {{> header isService=true }}
+
+        <main class="service">
+            {{> sub-kv subTitle-en="Service" subTitle-ja="サービス" }}
+            <section class="service-support l-container-l u-pbt">
+                <article class="service-support-item" id="service-support-career">
+                    <div class="service-support-item-image">
+                        <picture>
+                            <source
+                                srcset="/assets/images/service/service_1-sp.jpg"
+                                media="(max-width: 767px)"
+                            />
+                            <source
+                                srcset="/assets/images/service/service_1-pc.jpg"
+                                media="(min-width: 768px)"
+                            />
+                            <img
+                                src="/assets/images/service/service_1-pc.jpg"
+                                alt="キャリア設計サポートイメージ"
+                                width="600"
+                                height="545"
+                            />
+                        </picture>
+                    </div>
+                    <div class="service-support-item-content">
+                        <div class="service-support-item-title">
+                            <h2 class="service-support-item-title-ja">キャリア設計サポート</h2>
+                            <p class="service-support-item-title-en">Ministry of Education</p>
+                        </div>
+                        <div class="service-support-item-text">
+                            <p class="service-support-item-text-top">
+                                期間: 4週間（週1回・計4回） 形式: 個別指導 + 少人数グループワーク
+                            </p>
+                            <p class="service-support-item-text-bottom">
+                                自己理解からはじまる“納得のいく選択”。<br class="u-hidden-sp" />
+                                価値観・強み・志向性を明確にし、将来の軸をつくります。
+                            </p>
+                        </div>
+                        <ul class="service-support-item-point">
+                            <li class="service-support-item-point-item">
+                                自己分析ワークショップ（価値観・強み診断）
+                            </li>
+                            <li class="service-support-item-point-item">
+                                業界・職種研究セッション
+                            </li>
+                            <li class="service-support-item-point-item">
+                                キャリアビジョン設計サポート
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="service-support-item service-support-item--reverse" id="service-support-problem">
+                    <picture class="service-support-item-image service-support-item-image--reverse">
+                        <source
+                            srcset="/assets/images/service/service_2-sp.jpg"
+                            media="(max-width: 767px)"
+                        />
+                        <source
+                            srcset="/assets/images/service/service_2-pc.jpg"
+                            media="(min-width: 768px)"
+                        />
+                        <img
+                            src="/assets/images/service/service_2-pc.jpg"
+                            alt="キャリア設計サポートイメージ"
+                            width="600"
+                            height="545"
+                        />
+                    </picture>
+                    <div class="service-support-item-content service-support-item-content--reverse">
+                        <div class="service-support-item-title">
+                            <h2 class="service-support-item-title-ja">実践対策プログラム</h2>
+                            <p class="service-support-item-title-en">Job Preparation Bootcamp</p>
+                        </div>
+                        <div class="service-support-item-text">
+                            <p class="service-support-item-text-top">
+                                期間: 6週間（週2回・計12回）形式: 個別指導 + 実践形式グループ演習
+                            </p>
+                            <p class="service-support-item-text-bottom">
+                                書ける・話せる・伝わる就活力を。<br />
+                                ES添削、模擬面接、GD演習など、実戦的なサポートを行います。
+                            </p>
+                        </div>
+                        <ul class="service-support-item-point">
+                            <li class="service-support-item-point-item">
+                                ES添削・文章表現力向上トレーニング
+                            </li>
+                            <li class="service-support-item-point-item">
+                                模擬面接・フィードバックセッション
+                            </li>
+                            <li class="service-support-item-point-item">
+                                グループディスカッション実践演習
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <section class="service-case l-container-l u-pbt">
+                <div class="c-title">
+                    <span class="c-title-en">Case</span>
+                    <h2 class="c-title-ja">活用事例</h2>
+                </div>
+
+                <ul class="service-case-list">
+                    {{#each serviceCaseList}}
+                    <li class="service-case-list-item">
+                        <a href="{{this.url}}" class="service-case-list-item-link">
+                            <article class="service-case-list-item-inner">
+                                <div class="service-case-list-item-image">
+                                    <img src="{{this.image}}" alt="" width="374" height="249" />
+                                </div>
+                                <div class="service-case-list-item-content">
+                                    <p class="service-case-list-item-content-text">
+                                        <span class="service-case-list-item-content-text-from"
+                                            >{{this.fromText}}から</span
+                                        ><span class="service-case-list-item-content-text-to"
+                                            >{{this.toText}}に就職</span
+                                        >
+                                    </p>
+                                    <h3 class="service-case-list-item-content-text-title">
+                                        {{this.title}}
+                                    </h3>
+                                    {{> view-more-button size="small" }}
+                                </div>
+                            </article>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+        </main>
+
+        {{> footer}}
+    </body>
+</html>

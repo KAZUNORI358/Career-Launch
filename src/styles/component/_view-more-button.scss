@@ -1,0 +1,87 @@
+@use '../global' as g;
+
+/*!
+component > view-more-button
+------------------------------
+*/
+
+.c-view-more-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    transform-origin: center;
+    transition: scale 0.5s;
+
+    &--link {
+        @media (any-hover: hover) {
+            &:hover {
+                scale: 1.05;
+            }
+        }
+    }
+
+    &--large {
+        .c-view-more-button-text {
+            font-size: 18px;
+            gap: 14px;
+            @include g.mq() {
+                font-size: 20px;
+                gap: 24px;
+            }
+        }
+        .c-view-more-button-icon {
+            width: 47px;
+            height: 47px;
+            &::before {
+                width: 5px;
+                height: 5px;
+            }
+            @include g.mq() {
+                width: 58px;
+                height: 58px;
+                &::before {
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+    &--small {
+        .c-view-more-button-text {
+            font-size: 16px;
+            gap: 10px;
+        }
+        .c-view-more-button-icon {
+            width: 32px;
+            height: 32px;
+            &::before {
+                width: 4px;
+                height: 4px;
+            }
+        }
+    }
+}
+
+.c-view-more-button-text {
+    color: var(--color-primary);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+.c-view-more-button-icon {
+    border-radius: 100vh;
+    background-color: var(--color-primary);
+    position: relative;
+    &::before {
+        content: '';
+        display: inline-block;
+        background-color: var(--color-white);
+        border-radius: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

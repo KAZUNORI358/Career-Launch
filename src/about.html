@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+    {{> head}}
+    <body>
+        {{> header isAbout=true }}
+
+        <main class="about">
+            {{> sub-kv subTitle-en="About" subTitle-ja="私たちについて" }}
+            <section class="about-philosophy l-container-l u-pbt">
+                <div class="c-title">
+                    <span class="c-title-en">Philosophy</span>
+                    <h2 class="c-title-ja">私たちの価値</h2>
+                </div>
+
+                <ul class="about-philosophy-list">
+                    <li class="about-philosophy-item">
+                        <article class="about-philosophy-item-content">
+                            <span class="about-philosophy-item-title-en">Mission</span>
+                            <h3 class="about-philosophy-item-title-ja">
+                                一人ひとりと<br />
+                                真剣に向き合う
+                            </h3>
+                            <p class="about-philosophy-item-text">
+                                学生の可能性を最大限<br />
+                                引き出すパートナーとして
+                            </p>
+                        </article>
+                    </li>
+                    <li class="about-philosophy-item">
+                        <article class="about-philosophy-item-content">
+                            <span class="about-philosophy-item-title-en">Vision</span>
+                            <h3 class="about-philosophy-item-title-ja">
+                                自分らしく社会で<br />
+                                活躍する人材を育成
+                            </h3>
+                            <p class="about-philosophy-item-text">
+                                納得のいくキャリア選択が <br />
+                                できる未来を創る
+                            </p>
+                        </article>
+                    </li>
+                    <li class="about-philosophy-item">
+                        <article class="about-philosophy-item-content">
+                            <span class="about-philosophy-item-title-en">Value</span>
+                            <h3 class="about-philosophy-item-title-ja">
+                                『らしさ』を大切にした <br />
+                                キャリア形成
+                            </h3>
+                            <p class="about-philosophy-item-text">
+                                型にはめない <br />
+                                その人だけの強みを見つける
+                            </p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="about-staff u-pbt">
+                <div class="about-staff-content l-container-xl">
+                    <div class="c-title c-title--white">
+                        <span class="c-title-en">Staff</span>
+                        <h2 class="c-title-ja">スタッフ紹介</h2>
+                    </div>
+                    <p class="about-staff-text">
+                        一人ひとりの個性を大切にしながら、あなたの可能性を最大限に引き出します。
+                    </p>
+                </div>
+
+                <div class="about-staff-item-wrapper js-about-staff-slider splide">
+                    <div class="splide__track">
+                        <ul class="about-staff-item-list splide__list">
+                            {{#each staffList}}
+                            <li class="about-staff-item splide__slide">
+                                <article class="about-staff-item-card">
+                                    <div class="about-staff-item-card-image">
+                                        <img
+                                            src="{{ this.image }}"
+                                            alt="{{ this.nameJa }}"
+                                            width="230"
+                                            height="230"
+                                            decoding="async"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div class="about-staff-item-card-content">
+                                        <p class="about-staff-item-card-sub-name">
+                                            {{ this.subName }}
+                                        </p>
+                                        <div class="about-staff-item-card-name">
+                                            <h3 class="about-staff-item-card-name-ja">
+                                                {{ this.nameJa }}
+                                            </h3>
+                                            <p class="about-staff-item-card-name-en">
+                                                {{ this.nameEn }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-company u-ptb">
+                <div class="l-container-xl">
+                    <div class="c-title">
+                        <span class="c-title-en">Company</span>
+                        <h2 class="c-title-ja">会社案内</h2>
+                    </div>
+                    <div class="about-company-content">
+                        <div class="about-company-image">
+                            <img
+                                src="/assets/images/about/company.jpg"
+                                alt=""
+                                width="549"
+                                height="366"
+                            />
+                        </div>
+                        <dl class="about-company-list">
+                            <div class="about-company-list-item">
+                                <dt class="about-company-list-item-dt">会社名</dt>
+                                <dd class="about-company-list-item-dd">株式会社Career Launch</dd>
+                            </div>
+                            <div class="about-company-list-item">
+                                <dt class="about-company-list-item-dt">住所</dt>
+                                <dd class="about-company-list-item-dd">
+                                    〒101-0045 <br />
+                                    東京都千代田区神田鍛冶町3-2-1 神田サクラビル5F
+                                </dd>
+                            </div>
+                            <div class="about-company-list-item">
+                                <dt class="about-company-list-item-dt">代表者</dt>
+                                <dd class="about-company-list-item-dd">田中 美咲</dd>
+                            </div>
+                            <div class="about-company-list-item">
+                                <dt class="about-company-list-item-dt">電話番号</dt>
+                                <dd class="about-company-list-item-dd">03-1234-5678</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {{> footer}}
+    </body>
+</html>

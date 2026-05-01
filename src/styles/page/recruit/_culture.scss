@@ -1,0 +1,30 @@
+@use '../../global' as g;
+/*!
+page > recruit > culture
+------------------------------
+*/
+
+.recruit-culture {
+    padding-top: 64px;
+    @include g.mq() {
+        padding-top: 96px;
+    }
+}
+
+.recruit-culture-slider {
+    margin-top: 40px;
+}
+
+.recruit-culture-item {
+    aspect-ratio: 223 / 149;
+    border-radius: 11px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @include g.mq(md) {
+        aspect-ratio: 350 / 234;
+    }
+}

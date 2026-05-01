@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+    {{> head}}
+    <body>
+        {{> header isRecruit=true }}
+
+        <main class="recruit">
+            {{> sub-kv subTitle-en="Recruit" subTitle-ja="採用情報" }}
+            <section class="recruit-position l-container-l u-pbt">
+                <div class="c-title">
+                    <span class="c-title-en">Open Position</span>
+                    <h2 class="c-title-ja">募集職種</h2>
+                </div>
+
+                <div class="recruit-position-wrapper">
+                    <article class="recruit-position-item">
+                        <div class="recruit-position-item-title">
+                            <h3 class="recruit-position-item-title-ja">キャリアカウンセラー</h3>
+                            <p class="recruit-position-item-title-en">Career counselor</p>
+                        </div>
+                        <p class="recruit-position-item-text">
+                            学生の個別キャリア相談、自己分析サポート、面接指導を行います。
+                        </p>
+                    </article>
+                    <article class="recruit-position-item">
+                        <div class="recruit-position-item-title">
+                            <h3 class="recruit-position-item-title-ja">講師（ES・面接対策）</h3>
+                            <p class="recruit-position-item-title-en">Instructor</p>
+                        </div>
+                        <p class="recruit-position-item-text">
+                            ES添削指導、模擬面接実施、グループディスカッション指導を行います。
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="recruit-benefit">
+                <div class="l-container-l">
+                    <div class="c-title">
+                        <span class="c-title-en">Benefits</span>
+                        <h2 class="c-title-ja">福利厚生・待遇</h2>
+                    </div>
+
+                    <dl class="recruit-benefit-content">
+                        {{#each recruitPositionList}}
+                        <div class="recruit-benefit-content-item">
+                            <dt class="recruit-benefit-content-item__dt">{{title}}</dt>
+                            <dd class="recruit-benefit-content-item__dd">{{description}}</dd>
+                        </div>
+                        {{/each}}
+                    </dl>
+                </div>
+            </section>
+
+            <section class="recruit-culture u-pbt">
+                <div class="c-title l-container-l">
+                    <span class="c-title-en">Culture</span>
+                    <h2 class="c-title-ja">働く環境</h2>
+                </div>
+                <div class="recruit-culture-slider js-recruit-culture-slider splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="recruit-culture-item splide__slide">
+                                <img
+                                    src="/assets/images/recruit/culture_1.jpg"
+                                    alt=""
+                                    width="350"
+                                    height="234"
+                                />
+                            </li>
+                            <li class="recruit-culture-item splide__slide">
+                                <img
+                                    src="/assets/images/recruit/culture_2.jpg"
+                                    alt=""
+                                    width="350"
+                                    height="234"
+                                />
+                            </li>
+                            <li class="recruit-culture-item splide__slide">
+                                <img
+                                    src="/assets/images/recruit/culture_3.jpg"
+                                    alt=""
+                                    width="350"
+                                    height="234"
+                                />
+                            </li>
+                            <li class="recruit-culture-item splide__slide">
+                                <img
+                                    src="/assets/images/recruit/culture_4.jpg"
+                                    alt=""
+                                    width="350"
+                                    height="234"
+                                />
+                            </li>
+                            <li class="recruit-culture-item splide__slide">
+                                <img
+                                    src="/assets/images/recruit/culture_5.jpg"
+                                    alt=""
+                                    width="350"
+                                    height="234"
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="u-pbt u-center">{{> entry-button}}</div>
+        </main>
+
+        {{> footer}}
+    </body>
+</html>

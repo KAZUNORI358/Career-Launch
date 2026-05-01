@@ -1,0 +1,161 @@
+<header class="l-header">
+    <div class="l-header-container">
+        <div class="l-header-logo">
+            <a href="/" class="l-header-logo-link">
+                {{#if isHome}}
+                <h1 class="l-header-logo-image">
+                    <picture
+                        ><source
+                            srcset="/assets/images/common/logo-white-sp.svg"
+                            media="(max-width: 767px)"
+                        />
+                        <source
+                            srcset="/assets/images/common/logo-white-pc.svg"
+                            media="(min-width: 768px)"
+                        />
+
+                        <img
+                            src="/assets/images/common/logo-white-pc.svg"
+                            width="250"
+                            height="46"
+                            alt="Career Launch 就活スクール"
+                            decoding="async"
+                            loading="lazy"
+                        />
+                    </picture>
+                </h1>
+                {{else}}
+                <div class="l-header-logo-image">
+                    <picture>
+                        <source
+                            srcset="/assets/images/common/logo-sp.svg"
+                            media="(max-width: 767px)"
+                        />
+                        <source
+                            srcset="/assets/images/common/logo-pc.svg"
+                            media="(min-width: 768px)"
+                        />
+                        <img
+                            src="/assets/images/common/logo-pc.svg"
+                            width="250"
+                            height="46"
+                            alt="Career Launch 就活スクール"
+                            decoding="async"
+                            loading="lazy"
+                        />
+                    </picture>
+                </div>
+                {{/if}}
+            </a>
+        </div>
+
+        <div class="l-header-nav-wrapper">
+            <nav class="l-header-nav" aria-label="メニュー">
+                <ul class="l-header-list">
+                    <li class="l-header-item">
+                        <a
+                            href="{{base}}about.html"
+                            class="l-header-item-link {{#if isHome}}is-home{{/if}} {{#if isAbout}}is-current{{/if}}"
+                            >About</a
+                        >
+                    </li>
+                    <li class="l-header-item">
+                        <a
+                            href="{{base}}service.html"
+                            class="l-header-item-link {{#if isHome}}is-home{{/if}} {{#if isService}}is-current{{/if}}"
+                            >Service</a
+                        >
+                    </li>
+                    <li class="l-header-item">
+                        <a
+                            href="{{base}}news.html"
+                            class="l-header-item-link {{#if isHome}}is-home{{/if}} {{#if isNews}}is-current{{/if}}"
+                            >News</a
+                        >
+                    </li>
+                    <li class="l-header-item">
+                        <a
+                            href="{{base}}recruit.html"
+                            class="l-header-item-link {{#if isHome}}is-home{{/if}} {{#if isRecruit}}is-current{{/if}}"
+                            >Recruit</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <a href="{{base}}contact.html" class="l-header-contact">
+                <div class="l-header-contact-icon">
+                    <img src="/assets/images/top/icon-mail.svg" alt="" width="16" height="13" />
+                </div>
+                <span class="l-header-contact-text">Contact</span>
+            </a>
+        </div>
+        <!-- メニューボタン -->
+        <button
+            class="l-header-menu-button js-hamburger-menu-button-open"
+            aria-label="ハンバーガーメニューをひらく"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- ハンバーガーメニュー -->
+        <dialog
+            class="l-hamburger-menu-dialog js-hamburger-menu-dialog"
+            aria-label="ハンバーガーメニュー"
+        >
+            <div class="l-hamburger-menu-content">
+                <button
+                    class="l-hamburger-menu-button js-hamburger-menu-button-close"
+                    aria-label="ハンバーガーメニューを閉じる"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav aria-label="メニュー" class="l-hamburger-menu-nav">
+                    <ul class="l-hamburger-menu-list">
+                        <li class="l-hamburger-menu-item">
+                            <a href="/" class="l-hamburger-menu-item-link"
+                                ><span class="l-hamburger-menu-item-text-en">Top</span
+                                ><span class="l-hamburger-menu-item-text-ja">トップ</span></a
+                            >
+                        </li>
+                        <li class="l-hamburger-menu-item">
+                            <a href="{{base}}about.html" class="l-hamburger-menu-item-link"
+                                ><span class="l-hamburger-menu-item-text-en">About</span
+                                ><span class="l-hamburger-menu-item-text-ja"
+                                    >私たちについて</span
+                                ></a
+                            >
+                        </li>
+                        <li class="l-hamburger-menu-item">
+                            <a href="{{base}}service.html" class="l-hamburger-menu-item-link"
+                                ><span class="l-hamburger-menu-item-text-en">Service</span
+                                ><span class="l-hamburger-menu-item-text-ja">サービス</span></a
+                            >
+                        </li>
+                        <li class="l-hamburger-menu-item">
+                            <a href="{{base}}news.html" class="l-hamburger-menu-item-link"
+                                ><span class="l-hamburger-menu-item-text-en">News</span>
+                                <span class="l-hamburger-menu-item-text-ja">お知らせ</span>
+                            </a>
+                        </li>
+                        <li class="l-hamburger-menu-item">
+                            <a href="{{base}}recruit.html" class="l-hamburger-menu-item-link"
+                                ><span class="l-hamburger-menu-item-text-en">Recruit</span>
+                                <span class="l-hamburger-menu-item-text-ja">採用情報</span>
+                            </a>
+                        </li>
+                        <li class="l-hamburger-menu-item">
+                            <a href="{{base}}recruit.html" class="l-hamburger-menu-item-link"
+                                ><span class="l-hamburger-menu-item-text-en">Contact</span>
+                                <span class="l-hamburger-menu-item-text-ja">お問い合わせ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </dialog>
+        <!-- ハンバーガーメニュー -->
+    </div>
+</header>

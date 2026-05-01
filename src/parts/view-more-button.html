@@ -1,0 +1,11 @@
+{{#if isLink}}
+<a href="{{base}}{{url}}" class="c-view-more-button c-view-more-button--link c-view-more-button--{{size}}" aria-label="詳細を見る">
+    <span class="c-view-more-button-text"> ViewMore </span>
+    <span class="c-view-more-button-icon"></span>
+</a>
+{{else}}
+<div class="c-view-more-button c-view-more-button--{{size}}">
+    <span class="c-view-more-button-text"> ViewMore </span>
+    <span class="c-view-more-button-icon"></span>
+</div>
+{{/if}}

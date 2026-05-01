@@ -1,0 +1,59 @@
+@use '../../global' as g;
+/*!
+page > recruit > benefit
+------------------------------
+*/
+
+.recruit-benefit {
+    background-color: var(--color-bg-extra-light);
+    padding: 64px 0;
+    @include g.mq() {
+        padding: 96px 0;
+    }
+}
+
+.recruit-benefit-content {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    @include g.mq(ml) {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 32px;
+    }
+}
+
+.recruit-benefit-content-item {
+    padding: 16px 8px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    @include g.mq(ml) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 24px 16px;
+        gap: 20px;
+    }
+
+    @include g.mq(lg) {
+        gap: 34px;
+    }
+}
+
+.recruit-benefit-content-item__dt {
+    font-size: 14px;
+    letter-spacing: 0.125em;
+    color: var(--color-font-light);
+    @include g.mq() {
+        width: 100px;
+    }
+}
+
+.recruit-benefit-content-item__dd {
+    font-size: 14px;
+    font-weight: 600;
+}

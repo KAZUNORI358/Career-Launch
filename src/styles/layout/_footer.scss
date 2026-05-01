@@ -1,0 +1,201 @@
+@use '../global' as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.l-footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.l-footer-container {
+    padding: 54px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include g.mq(ml) {
+        padding: 54px 0 32px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            'logo nav'
+            'company bottom';
+        align-items: start;
+    }
+}
+
+.l-footer-logo {
+    width: 250px;
+    height: 46px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @include g.mq(ml) {
+        grid-area: logo;
+    }
+}
+
+.l-footer-company {
+    @include g.mq(ml) {
+        grid-area: company;
+        margin-top: 80px;
+    }
+}
+.l-footer-company-name {
+    font-size: 13px;
+    text-align: center;
+    @include g.mq(ml) {
+        text-align: left;
+    }
+}
+
+.l-footer-company-address {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    @include g.mq(ml) {
+        text-align: left;
+        margin-top: 5px;
+    }
+}
+
+.l-footer-company-address-top {
+    font-size: 13px;
+}
+
+.l-footer-company-address-bottom {
+    margin-top: 10px;
+    font-size: 13px;
+    display: flex;
+    gap: 12px;
+    @include g.mq(ml) {
+        margin-top: 5px;
+    }
+}
+.l-footer-nav {
+    @include g.mq(ml) {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 55px;
+    }
+}
+
+.l-footer-nav-list {
+    display: flex;
+    gap: 32px;
+    @include g.mq(ml) {
+        gap: 55px;
+    }
+}
+
+.l-footer-nav-item {
+    font-family: var(--font-family-en);
+    font-size: 18px;
+    letter-spacing: 0.025em;
+}
+
+.l-footer-nav-link {
+    padding: 5px 0;
+    transition: opacity 0.5s;
+    @include g.mq(ml) {
+        padding: 10px 0;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.l-footer-contact {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    border: 2px solid var(--color-white);
+    border-radius: 100vh;
+    padding: 9px 105.5px;
+    transition: background-color 0.5s;
+    @include g.mq(ml) {
+        margin-top: 0;
+        padding: 9px 31px;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-primary02);
+        }
+    }
+}
+
+.l-footer-contact-icon {
+    width: 16px;
+    height: 13px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.l-footer-contact-text {
+    font-family: var(--font-family-en);
+    font-size: 18px;
+    letter-spacing: 0.025em;
+    line-height: 1;
+}
+.l-footer-bottom-nav {
+    @include g.mq(ml) {
+        grid-area: bottom;
+        margin-top: 80px;
+    }
+}
+
+.l-footer-bottom-nav-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    @include g.mq(ml) {
+        justify-content: flex-end;
+    }
+}
+
+.l-footer-bottom-nav-link {
+    font-size: 14px;
+    font-family: var(--font-family-en);
+    letter-spacing: 0.025em;
+    line-height: 1.7;
+    padding: 1px 0;
+    transition: opacity 0.5s;
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.l-footer-copyright {
+    margin-top: 10px;
+    text-align: center;
+    @include g.mq(ml) {
+        text-align: right;
+    }
+}
+
+.l-footer-copyright-text {
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.075em;
+}

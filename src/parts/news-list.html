@@ -1,0 +1,12 @@
+<ul class="c-news-list" aria-label="お知らせ一覧">
+    {{#each newsList}}
+    <li class="c-news-list-item">
+        <a href="{{this.url}}" class="c-news-list-item-link">
+            <article class="c-news-list-item-content">
+                <time class="c-news-list-item-date" datetime="{{this.date}}">{{this.date}}</time>
+                <h3 class="c-news-list-item-title">{{this.title}}</h3>
+            </article>
+        </a>
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+    {{> head}}
+    <body>
+        {{> header  isNews=true }}
+
+        <main class="news u-pbt">
+            {{> sub-kv subTitle-en="News" subTitle-ja="お知らせ" }}
+            <div class="l-container-s">{{> news-list}}</div>
+
+            <!-- pagination -->
+            <nav class="news-pagination" aria-label="お知らせページネーション">
+                <h2 class="u-visually-hidden">お知らせナビゲーション</h2>
+                <div class="news-pagination-links">
+                    <a href="#" class="news-pagination-prev">
+                        <span class="u-visually-hidden">前のページへ</span>
+                    </a>
+                    <a href="#" class="news-pagination-page "
+                        >1<span class="u-visually-hidden">ページ目へ</span></a
+                    >
+                    <a href="#" class="news-pagination-page news-pagination-page--current"
+                        >2<span class="u-visually-hidden">ページ目へ</span></a
+                    >
+
+                    <a href="#" class="news-pagination-page"
+                        >3<span class="u-visually-hidden">ページ目へ</span></a
+                    >
+                    <span class="news-pagination-dots">&hellip;</span>
+                    <a href="#" class="news-pagination-page"
+                        >10<span class="u-visually-hidden">ページ目へ</span></a
+                    >
+                    <a href="#" class="news-pagination-next"
+                        ><span class="u-visually-hidden">次のページへ</span></a
+                    >
+                </div>
+            </nav>
+        </main>
+
+        {{> footer}}
+    </body>
+</html>

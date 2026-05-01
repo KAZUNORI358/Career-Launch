@@ -1,0 +1,147 @@
+@use '../../global' as g;
+
+/*!
+page > top > top-service
+------------------------------
+*/
+
+.top-service {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: calc(100% - ((100% - min(90%, var(--width-content-l))) / 2) / 2);
+        height: 500px;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: var(--z-index-background);
+        border-radius: 0 0 30px 0;
+    }
+
+    @include g.mq(md) {
+        &::before {
+            height: 410px;
+        }
+    }
+}
+
+.top-service-wrapper {
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include g.mq(lg) {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @include g.mq(xl) {
+        gap: 65px;
+    }
+}
+
+.top-service-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-right: calc((100% - min(90%, var(--width-content-l))) / 2);
+
+    @include g.mq(ml) {
+        padding-right: 0;
+    }
+}
+
+.top-service-content-text {
+    color: var(--color-white);
+    @include g.mq(ml) {
+        font-size: 16px;
+    }
+}
+
+.top-service-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include g.mq(md) {
+        flex-direction: row;
+        gap: 60px;
+    }
+    @include g.mq(lg) {
+        gap: 40px;
+    }
+}
+
+.top-service-item {
+    width: 100%;
+    height: 100%;
+    @include g.mq(xl) {
+        width: 337px;
+    }
+}
+
+.top-service-item-link {
+    @media (any-hover: hover) {
+        &:hover {
+            .top-service-item-image {
+                img {
+                    scale: 1.05;
+                }
+            }
+            .c-view-more-button {
+                scale: 1.05;
+            }
+        }
+    }
+}
+
+.top-service-item-image {
+    aspect-ratio: 316 / 251;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: scale 0.5s;
+    }
+    @include g.mq(md) {
+        aspect-ratio: 337 / 385;
+    }
+    @include g.mq(xl) {
+        max-width: 337px;
+        max-height: 385px;
+    }
+}
+
+.top-service-item-content {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.top-service-item-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.top-service-item-title-ja {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.top-service-item-title-en {
+    font-size: 15px;
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+}
+
+.top-service-item-text {
+    font-size: 16px;
+}

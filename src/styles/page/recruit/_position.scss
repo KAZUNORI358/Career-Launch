@@ -1,0 +1,52 @@
+@use '../../global' as g;
+
+/*!
+page > recruit > position
+------------------------------
+*/
+
+.recruit-position-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include g.mq(ml) {
+        flex-direction: row;
+        gap: 60px;
+    }
+}
+
+.recruit-position-item {
+    border-radius: 11px;
+    border: 1px solid var(--color-border);
+    padding: 31px 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    @include g.mq() {
+        padding: 39px;
+    }
+}
+
+.recruit-position-item-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.recruit-position-item-title-ja {
+    font-size: 20px;
+    font-weight: 600;
+    @include g.mq() {
+        font-size: 28px;
+    }
+}
+
+.recruit-position-item-title-en {
+    font-size: 15px;
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    @include g.mq() {
+        font-size: 16px;
+    }
+}

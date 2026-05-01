@@ -1,0 +1,61 @@
+@use '../global' as g;
+
+/*!
+component > news-list
+------------------------------
+*/
+
+.c-news-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-news-list-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.c-news-list-item-link {
+    display: block;
+    width: 100%;
+    padding: 16px 0 16px 10px;
+    transition: background-color 0.5s;
+    @include g.mq() {
+        padding: 24px 0 24px 20px;
+    }
+
+    @media (any-hover:hover){
+      &:hover{
+        background-color: var(--color-bg-light);
+      }
+    }
+}
+
+.c-news-list-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    @include g.mq() {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.c-news-list-item-date {
+    font-family: var(--font-family-en);
+    color: var(--color-font-light);
+    font-size: 13px;
+    letter-spacing: 0.025em;
+    @include g.mq() {
+        font-size: 14px;
+    }
+}
+
+.c-news-list-item-title {
+    font-weight: 600;
+    line-height: 1.6;
+
+    @include g.mq() {
+        font-size: 18px;
+    }
+}

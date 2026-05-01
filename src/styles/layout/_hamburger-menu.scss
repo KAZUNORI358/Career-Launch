@@ -1,0 +1,94 @@
+@use '../global' as g;
+
+/*!
+layout > hamburger-menu
+------------------------------
+*/
+
+.l-hamburger-menu-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-modal-bg-black);
+    z-index: var(--z-index-modal);
+
+
+    @include g.mq(ml) {
+        display: none;
+    }
+}
+.l-hamburger-menu-content {
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 14.66%);
+    height: calc(100% - 12.77%);
+    border-radius:  0 0 0 30px;
+}
+
+.l-hamburger-menu-button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    border-radius: 100vh;
+    transition: opacity 0.5s;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 19.8px;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    span:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    span:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.l-hamburger-menu-list {
+    margin: 48px 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.l-hamburger-menu-item {
+    color: var(--color-white);
+}
+.l-hamburger-menu-item-link {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    transition: opacity 0.5s;
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.l-hamburger-menu-item-text-en {
+    font-family: var(--font-family-en);
+    font-size: 28px;
+}
+
+.l-hamburger-menu-item-text-ja {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}

@@ -1,0 +1,98 @@
+@use '../../global' as g;
+
+/*!
+page > top > about
+------------------------------
+*/
+
+.top-about {
+    display: flex;
+    flex-direction: column;
+    @include g.mq(ml) {
+        flex-direction: row;
+        gap: 59px;
+    }
+}
+
+.top-about-content {
+    @include g.mq(ml) {
+        margin-top: 40px;
+        margin-left: calc((100% - min(90%, var(--width-content-l))) / 2);
+    }
+}
+
+.top-about-content-title {
+    font-size: 20px;
+    font-family: var(--font-family-en);
+    line-height: 1;
+    letter-spacing: 0.075em;
+    display: flex;
+    align-items: center;
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: var(--color-primary);
+        border-radius: 100vh;
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+}
+
+.top-about-content-head-text-ja {
+    margin-top: 16px;
+    font-size: 28px;
+    line-height: 1.6;
+}
+
+.top-about-content-head-text-en {
+    margin-top: 8px;
+    font-size: 15px;
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    @include g.mq(ml) {
+        font-size: 16px;
+    }
+}
+
+.top-about-content-bottom-text {
+    margin-top: 24px;
+    line-height: 2.2;
+    @include g.mq(ml) {
+        margin-top: 32px;
+    }
+}
+
+.top-about-content-button {
+    margin-top: 14px;
+    width: fit-content;
+    margin-left: auto;
+    @include g.mq(ml) {
+        margin-top: 40px;
+        gap: 24px;
+    }
+}
+
+
+.top-about-image {
+    margin-top: 28px;
+    margin-left: auto;
+    width: calc(355 / 375 * 100%);
+    height: auto;
+    aspect-ratio: 375 / 237;
+    overflow: hidden;
+    border-radius: 10px 0 10px 0;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    @include g.mq(ml) {
+        width: 100%;
+        aspect-ratio: 624 / 670;
+        border-radius: 20px 0 20px 0;
+        margin: 0;
+        max-width: 624px;
+    }
+}

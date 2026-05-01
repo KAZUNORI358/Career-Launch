@@ -1,0 +1,81 @@
+@use '../../global' as g;
+
+/*!
+page > about > company
+------------------------------
+*/
+
+.about-company {
+    background-color: var(--color-bg-extra-light);
+}
+
+.about-company-content {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include g.mq(lg) {
+        margin-top: 17px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    @include g.mq(xxl) {
+        gap: 51px;
+    }
+}
+
+.about-company-image {
+    aspect-ratio: 335 / 223;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include g.mq(lg) {
+        max-width: 549px;
+        max-height: 366px;
+        aspect-ratio: 549 / 366;
+        border-radius: 14px;
+    }
+}
+
+.about-company-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-company-list-item {
+    padding: 16px 8px;
+    border-bottom: 1px solid var(--color-border);
+    @include g.mq(md) {
+        display: flex;
+        align-items: center;
+        padding: 23px 35px 24px 8px;
+        gap: 40px;
+}}
+
+.about-company-list-item-dt {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-font-light);
+    letter-spacing: 0.125em;
+    @include g.mq(md) {
+        font-size: 16px;
+        width: 80px;
+        flex-shrink: 0;
+    }
+}
+
+.about-company-list-item-dd {
+    font-size: 14px;
+    font-weight: 600;
+    @include g.mq(md) {
+        font-size: 18px;
+    }
+}

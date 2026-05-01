@@ -1,0 +1,8 @@
+.splide {
+  padding: 3em;
+}ive;
+  visibility: hidden;
+}
+.splide.is-initialized, .splide.is-rendered {
+  visibility: visible;
+}

@@ -1,0 +1,45 @@
+@use '../global' as g;
+
+/*!
+component > breadcrumb
+------------------------------
+*/
+
+.c-breadcrumb {
+    margin-top: 32px;
+    @include g.mq() {
+        margin-top: 56px;
+    }
+}
+
+.c-breadcrumb-list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.c-breadcrumb-item {
+    font-size: 14px;
+    font-family: var(--font-family-en);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: var(--color-font-light);
+
+    &__current {
+        color: var(--color-primary);
+    }
+
+    &:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        border-bottom: 1px solid var(--color-font-light);
+        border-right: 1px solid var(--color-font-light);
+        transform: rotate(-45deg);
+        margin-left: 4px;
+        vertical-align: middle;
+    }
+    @include g.mq() {
+        font-size: 18px;
+    }
+}
